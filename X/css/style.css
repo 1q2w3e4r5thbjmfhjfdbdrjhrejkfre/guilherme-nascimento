@@ -1,0 +1,40 @@
+h1 {
+    font-family: roboto;
+    }
+    header {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px;
+        border-bottom: 1px;
+    }
+
+    #avatar {
+        width: 50px;
+        height: 50px;
+        background-position: left top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("../imagens/naruto.png");
+    }
+    #logo {
+        width: 50px;
+        height: 50px;
+        background-position: left top;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("../imagens/Twitter\ Logo.png");
+    }
+    #Effects {
+        width: 50px;
+        height: 50px;
+        background-position: left top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("../imagens/Feature\ stroke\ icon.png");
+    }   
+    #card { 
+        padding: 10px;
+
+    }
+
+   

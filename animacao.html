@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 250px;
+            height: 250px;
+            border: 2px solid rgb(197, 64, 168);
+            background-color: rgb(185, 124, 241);
+            animation: revelar 10s infinite;
+        }
+        .menino {
+            background-color: aqua;
+        }
+        .menina {
+            background-color: rgb(229, 18, 248);
+        }
+        @keyframes revelar {
+            from {
+                background-color: rgb(71, 71, 253);
+            
+            }
+            to {
+                background-color: blueviolet;
+            }
+        }
+    button {
+        background-color: rgb(195, 247, 9);
+    }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <button>menino ou menina</button>
+    <script>
+        var btn = getElementById("box")
+        btn.addEventListener("click", () => {
+            //mudar cores para azul ou rosa
+        var revelando = document.getElementsByid("box").style.backgroundColor = "pink"
+        })
+    </script>
+</body>
+</html>
