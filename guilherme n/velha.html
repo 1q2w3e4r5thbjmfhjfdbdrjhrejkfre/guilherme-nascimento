@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Véa</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mansalva&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Mansalva&family=Sixtyfour+Convergence&display=swap');
+        body {
+            background-image: url(./gaby.png);
+            background-i;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: 14%;
+        }
+        button{
+            width: 100;
+            hei
+        }
+        input[type="button"] {
+            width: 150px;
+            height: 150px;
+            font-size: 69px;
+            font-family: "Mansalva", sans-serif;
+            margin: 4px;
+        }
+        input[type="text"]{
+            width: 33%;
+        }
+        h1 {
+            font-family: "Sixtyfour Convergence", sans-serif;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+    <div id="conteudo"> 
+        <h1>Jogo da Véa</h1>
+        <div id="tabuleiro">
+            <input type="text" placeholder="Nome do player X" name="playerX" id="playerX">
+            <input type="text" placeholder="Nome do player O" name="playerO" id="playerO">
+            <div>
+                <input type="button" class="input" value="">
+                <input type="button" class="input" value="">
+                <input type="button" class="input" value="">
+            </div>
+            <div>
+                <input type="button" class="input" value="">
+                <input type="button" class="input" value="">
+                <input type="button" class="input" value="">
+            </div>
+            </div>
+                <input type="button" class="input" value="">
+                <input type="button" class="input" value="">
+                <input type="button" class="input" value="">
+            </div>
+        </div>
+    </div>
+    <button onclick="reiniciajogo">reiniciajogo</button>
+    <script>
+        inputs = document.querySelectorAll('.input')
+        jogada = "X"
+
+        inputs.forEach(element => {
+            element.addEventListener("click", () => {
+               if(element.value === ""){
+                element.value = jogada
+                if(jogada === "X"){
+                    jogada = "O"
+                }else {
+                    jogada = "X"
+                }
+               }
+            })
+        });
+        function reiniciajogo(){
+            inputs.forEach (input =>{ 
+                input.value ="" //limpando
+            })
+        }
+    </script>
+</body>
+</html>
