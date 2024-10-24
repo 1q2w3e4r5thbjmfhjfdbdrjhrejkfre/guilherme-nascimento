@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
     <style>
+
         * { 
             padding: 0;
             margin: 0;
@@ -25,10 +26,10 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
         .visor {
-           width: 95%;
-           height: 40;
+            width: 95%;
+            height: 40;
             margin-bottom: 30px;
-
+    
         }
         input {
             width: 100%;
@@ -37,6 +38,8 @@
             text-align: right;
             border: none;
             border-radius: 5px;
+            color: rgb(0, 26, 255);
+            background-color: #ddd;
         }
         .botoes {
             display: grid;
@@ -63,23 +66,42 @@
             <input type="text" name="resultado" id="resultado" disabled>
         </div>
         <div class="botoes">
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>/</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>-</button>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>x</button>
-            <button>0</button>
-            <button>CE</button>
-            <button>=</button>
-            <button>+</button>
+            <button onclick="add('7')">7</button>
+            <button onclick="add('8')">8</button>
+            <button onclick="add('9')">9</button>
+            <button onclick="add('/')">/</button>
+            <button onclick="add('4')">4</button>
+            <button onclick="add('5')">5</button>
+            <button onclick="add('6')">6</button>
+            <button onclick="add('-')">-</button>
+            <button onclick="add('1')">1</button>
+            <button onclick="add('2')">2</button>
+            <button onclick="add('3')">3</button>
+            <button onclick="add('*')">x</button>
+            <button onclick="add('0')">0</button>
+            <button onclick="clearResult()">CE</button>
+            <button onclick="calculateResult()">=</button>
+            <button onclick="add('+')">+</button>
         </div>
     </div>
+    <script>
+        const visor = document.getElementById("resultado");
+        
+        function add(numero) {
+            visor.value += numero;
+        }
+
+        function clearResult() {
+            visor.value = '';
+        }
+
+        function calculateResult() {
+            try {
+                visor.value = eval(visor.value.replace('x', '*'));
+            } catch (e) {
+                visor.value = 'Erro';
+            }
+        }
+    </script>
 </body>
 </html>
