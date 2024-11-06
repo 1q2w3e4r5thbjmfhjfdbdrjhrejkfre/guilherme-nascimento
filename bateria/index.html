@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bateria</title>
+    <style> 
+        body, html{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .bateria{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            justify-items: center;
+        }
+        .cut{
+            background-color: #ccc;
+            border: 1px solid #888;
+            padding: 20px;
+            font-size: 18px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        .cut:hover{
+            background-color: cornsilk;
+            transition: 0.5s;
+            color: black;
+        }
+
+        .active{
+            background-color: cornsilk;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="bateria">
+        <button class="cut" id="kick" type="button">
+            kick<br>
+            (Q)
+        </button>
+        <button class="cut" id="Hihat" type="button">
+            Hihat<br>
+            (W)
+        </button>
+        <button class="cut" id="Crash" type="button">
+            Crash<br>
+            (E)
+        </button>
+        <button class="cut" id="Snare" type="button">
+            Snare<br>
+            (A)    
+        </button>
+        <button class="cut" id="Tom1" type="button">
+            Tom1<br>
+            (S)
+        </button>
+        <button class="cut" id="Tom2" type="button">
+            Tom2<br>
+            (D)
+        </button>        
+    </div>
+    <script>
+         const sounds = {
+            kick: new Audio('./drums/kick.wav'),
+            Hihat: new Audio('./drums/hihat.wav'),
+            Crash: new Audio('./drums/crash.wav'),
+            Snare: new Audio('./drums/snare.wav'),
+            Tom1: new Audio('./drums/tom1.wav'),
+            Tom2: new Audio('./drums/tom2.wav')
+        };
+
+        function playSound(sound) {
+            sound.currentTime = 0;
+            sound.play();
+        }
+
+        document.getElementById("kick").addEventListener("click", () => playSound(sounds.kick));
+        document.getElementById("Hihat").addEventListener("click", () => playSound(sounds.Hihat));
+        document.getElementById("Crash").addEventListener("click", () => playSound(sounds.Crash));
+        document.getElementById("Snare").addEventListener("click", () => playSound(sounds.Snare));
+        document.getElementById("Tom1").addEventListener("click", () => playSound(sounds.Tom1));
+        document.getElementById("Tom2").addEventListener("click", () => playSound(sounds.Tom2));
+        
+        document.addEventListener('keypress', (event) => {
+            switch(event.key.toLowerCase()) {
+                case 'q':
+                    playSound(sounds.kick);
+                    document.querySelector("#kick").classList.add("active");
+                    setTimeout(() => document.querySelector("#kick").classList.remove("active"), 100);
+                    break;
+                case 'w':
+                    playSound(sounds.Hihat);
+                    document.querySelector("#Hihat").classList.add("active");
+                    setTimeout(() => document.querySelector("#Hihat").classList.remove("active"), 100);
+                    break;
+                case 'e':
+                    playSound(sounds.Crash);
+                    document.querySelector("#Crash").classList.add("active");
+                    setTimeout(() => document.querySelector("#Crash").classList.remove("active"), 100);
+                    break;
+                case 'a':
+                    playSound(sounds.Snare);
+                    document.querySelector("#Snare").classList.add("active");
+                    setTimeout(() => document.querySelector("#Snare").classList.remove("active"), 100);
+                    break;
+                case 's':
+                    playSound(sounds.Tom1);
+                    document.querySelector("#Tom1").classList.add("active");
+                    setTimeout(() => document.querySelector("#Tom1").classList.remove("active"), 100);
+                    break;
+                case 'd':
+                    playSound(sounds.Tom2);
+                    document.querySelector("#Tom2").classList.add("active");
+                    setTimeout(() => document.querySelector("#Tom2").classList.remove("active"), 100);
+                    break;
+                default:
+                    break;
+            }
+        });
+        document.addEventListener('keydown', (event) => {
+            switch(event.key.toUpperCase()) {
+                case 'Q':
+                    playSound(sounds.kick);
+                    break;
+                case 'W':
+                    playSound(sounds.Hihat);
+                    break;
+                case 'E':
+                    playSound(sounds.Crash);
+                    break;
+                case 'A':
+                    playSound(sounds.Snare);
+                    break;
+                case 'S':
+                    playSound(sounds.Tom1);
+                    break;
+                case 'D':
+                    playSound(sounds.Tom2);
+                    break;
+                default:
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>
