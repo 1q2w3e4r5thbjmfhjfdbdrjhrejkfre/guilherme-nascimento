@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bateria</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .pad{
+            display: flex;
+            flex-direction: column;
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            border: 2px solid white;
+            padding: 24px;
+            width: 100px;
+            height: 100px;
+            border-radius: 16px;
+            transition: .1s;
+        }
+        .click{
+            background-color: white;
+            transition: .1s;
+            color: black;
+            width: 110px;
+            height: 110px;
+        }
+        html{
+            width: 100%;
+            height: 100%;
+        }
+        body{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+        #drum *{
+            margin: 15px;
+        }
+        h1{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+        <h1>Bateria Virtual</h1>
+        <div id="drum" style="display: flex;flex-direction: row;">
+        <div id="kick" class="pad"> Kick <br> (A)</div>
+        <div id="snare" class="pad">Snare <br>(S)</div>
+        <div id="hihat" class="pad">Hi-Hat <br>(D)</div>
+        <div id="tom1" class="pad">Tom 1 <br>(K)</div>
+        <div id="tom2" class="pad">Tom 2 <br>(L)</div>
+        <div id="crash" class="pad">Crash <br>(Ç)</div>
+        </div>
+        <script>
+            const sounds = {
+                kick: new Audio("./drums/kick.wav"),
+                snare: new Audio("./drums/snare.wav"),
+                hihat: new Audio("./drums/hihat.wav"),
+                tom1: new Audio("./drums/tom1.wav"),
+                tom2: new Audio("./drums/tom2.wav"),
+                crash: new Audio("./drums/crash.wav"),
+            }
+
+            function playsound(sound){
+                sound.currentTime = 0;
+                sound.play();
+            }
+            document.getElementById("kick").addEventListener("click", () => playsound(sounds.kick))
+            document.getElementById("crash").addEventListener("click", () => playsound(sounds.crash))
+            document.getElementById("snare").addEventListener("click", () => playsound(sounds.snare))
+            document.getElementById("tom1").addEventListener("click", () => playsound(sounds.tom1))
+            document.getElementById("tom2").addEventListener("click", () => playsound(sounds.tom2))
+            document.getElementById("hihat").addEventListener("click", () => playsound(sounds.hihat))
+
+            document.addEventListener("keydown", (event) => {
+                switch(event.key.toLowerCase()) {
+                    case "a":
+                        playsound(sounds.kick);
+                        document.getElementById("kick").classList.add("click");
+                        setTimeout(() => document.querySelector("#kick").classList.remove("click"), 100);
+                        break;
+                    case "s":
+                        playsound(sounds.snare);
+                        document.getElementById("snare").classList.add("click");
+                        setTimeout(() => document.querySelector("#snare").classList.remove("click"), 100)
+                        break;
+                    case "d":
+                        playsound(sounds.hihat);
+                        document.getElementById("hihat").classList.add("click");
+                        setTimeout(() => document.querySelector("#hihat").classList.remove("click"), 100)
+                        break;
+                    case "k":
+                        playsound(sounds.tom1);
+                        document.getElementById("tom1").classList.add("click");
+                        setTimeout(() => document.querySelector("#tom1").classList.remove("click"), 100)
+                        break;
+                    case "l":
+                        playsound(sounds.tom2);
+                        document.getElementById("tom2").classList.add("click");
+                        setTimeout(() => document.querySelector("#tom2").classList.remove("click"), 100)
+                        break;
+                    case "ç":
+                        playsound(sounds.crash);
+                        document.getElementById("crash").classList.add("click");
+                        setTimeout(() => document.querySelector("#crash").classList.remove("click"), 100)
+                        break;
+                }
+                
+            })
+        </script>
+</body>
+</html>

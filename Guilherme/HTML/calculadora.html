@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+
+        * { 
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: aquamarine;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .calculadora {
+            background-color: black;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        .visor {
+            width: 95%;
+            height: 40;
+            margin-bottom: 30px;
+    
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            font-size: 24px;
+            text-align: right;
+            border: none;
+            border-radius: 5px;
+            color: rgb(14, 12, 12);
+            background-color: #22412c;
+        }
+        .botoes {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        button {
+            padding: 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #d6d3d3;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculadora">
+        <div class="visor">
+            <input type="text" name="resultado" id="resultado" disabled>
+        </div>
+        <div class="botoes">
+            <button onclick="add('7')">7</button>
+            <button onclick="add('8')">8</button>
+            <button onclick="add('9')">9</button>
+            <button onclick="add('/')">/</button>
+            <button onclick="add('4')">4</button>
+            <button onclick="add('5')">5</button>
+            <button onclick="add('6')">6</button>
+            <button onclick="add('-')">-</button>
+            <button onclick="add('1')">1</button>
+            <button onclick="add('2')">2</button>
+            <button onclick="add('3')">3</button>
+            <button onclick="add('*')">x</button>
+            <button onclick="add('0')">0</button>
+            <button onclick="clearResult()">CE</button>
+            <button onclick="calculateResult()">=</button>
+            <button onclick="add('+')">+</button>
+        </div>
+    </div>
+    <script>
+        const visor = document.getElementById("resultado");
+        
+        function add(numero) {
+            visor.value += numero;
+        }
+
+        function clearResult() {
+            visor.value = '';
+        }
+
+        function calculateResult() {
+            try {
+                visor.value = eval(visor.value.replace('x', '*'));
+            } catch (e) {
+                visor.value = 'Erro';
+            }
+        }
+    </script>
+</body>
+</html>

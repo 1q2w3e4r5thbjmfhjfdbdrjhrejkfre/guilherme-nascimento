@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urna Eletrônica</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Urna Eletrônica</h1>
+    </div>
+    <div class="urna-container">
+        <!-- Tela da Urna -->
+        <div class="urna-tela">
+            <p id="tela-candidato">Número: 0</p>
+            <p id="tela-nome">Candidato: Nenhum</p>
+            <p id="tela-status">Aguardando Votação...</p>
+        </div>
+
+        <!-- Botões de Números com fundo preto -->
+        <div class="urna-botoes">
+            <button class="botao" onclick="adicionarNumero(1)">1</button>
+            <button class="botao" onclick="adicionarNumero(2)">2</button>
+            <button class="botao" onclick="adicionarNumero(3)">3</button>
+            <button class="botao" onclick="adicionarNumero(4)">4</button>
+            <button class="botao" onclick="adicionarNumero(5)">5</button>
+            <button class="botao" onclick="adicionarNumero(6)">6</button>
+            <button class="botao" onclick="adicionarNumero(7)">7</button>
+            <button class="botao" onclick="adicionarNumero(8)">8</button>
+            <button class="botao" onclick="adicionarNumero(9)">9</button>
+            <button class="botao" onclick="adicionarNumero(0)">0</button>
+        </div>
+
+        <!-- Botões Laterais (Branco, Corrigir, Confirmar) -->
+        <div class="urna-botoes-laterais">
+            <button class="botao-lateral branco" onclick="votoBranco()">Branco</button>
+            <button class="botao-lateral corrigir" onclick="corrigirVotacao()">Corrigir</button>
+            <button class="botao-lateral confirmar" onclick="confirmarVotacao()">Confirmar</button>
+        </div>
+    </div>
+</body>
+</html>
