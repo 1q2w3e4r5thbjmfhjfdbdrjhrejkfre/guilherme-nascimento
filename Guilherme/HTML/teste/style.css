@@ -1,0 +1,51 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .container {
+    width: 90%;
+    margin: 20px auto;
+  }
+  
+  h1 {
+    margin-bottom: 40px;
+    color: #333;
+  }
+  
+  .bracket {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .fase {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  .jogo {
+    margin: 15px 0;
+  }
+  
+  .jogo span {
+    font-size: 18px;
+    display: block;
+  }
+  
+  .placar {
+    width: 70px;
+    padding: 5px;
+    text-align: center;
+    margin: 0 10px;
+  }
+  
+  button {
+    padding: 5px 15p
+  

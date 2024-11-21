@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chave de Eliminação Simples - Torneio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Chave de Eliminação Simples - Torneio</h1>
+    
+    <div class="bracket">
+      <!-- Fase 1 (Quartas de Final) -->
+      <div class="fase fase1">
+        <div class="jogo" id="jogo1">
+          <span>Time A</span>
+          <input type="text" class="placar" id="placar-jogo1" placeholder="0 - 0">
+          <span>Time B</span>
+          <button onclick="atualizarPlacar(1)">Atualizar</button>
+        </div>
+        <div class="jogo" id="jogo2">
+          <span>Time C</span>
+          <input type="text" class="placar" id="placar-jogo2" placeholder="0 - 0">
+          <span>Time D</span>
+          <button onclick="atualizarPlacar(2)">Atualizar</button>
+        </div>
+        <div class="jogo" id="jogo3">
+          <span>Time E</span>
+          <input type="text" class="placar" id="placar-jogo3" placeholder="0 - 0">
+          <span>Time F</span>
+          <button onclick="atualizarPlacar(3)">Atualizar</button>
+        </div>
+        <div class="jogo" id="jogo4">
+          <span>Time G</span>
+          <input type="text" class="placar" id="placar-jogo4" placeholder="0 - 0">
+          <span>Time H</span>
+          <button onclick="atualizarPlacar(4)">Atualizar</button>
+        </div>
+      </div>
+      
+      <!-- Fase 2 (Semifinais) -->
+      <div class="fase fase2">
+        <div class="jogo" id="jogo5">
+          <span>Vencedor Jogo 1</span>
+          <input type="text" class="placar" id="placar-jogo5" placeholder="0 - 0">
+          <span>Vencedor Jogo 2</span>
+          <button onclick="atualizarPlacar(5)">Atualizar</button>
+        </div>
+        <div class="jogo" id="jo
