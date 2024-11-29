@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Perguntas</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://d9radp1mruvh.cloudfront.net/media/challenge_img/quiz2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .container {
+            max-width: 2000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+        }
+        .question {
+            margin-bottom: 30px;
+        }
+        .question p {
+            font-weight: bold;
+        }
+        .answers input {
+            margin-right: 12px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 55px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Quiz de Perguntas</h1>
+    <form id="quizForm">
+        <!-- Pergunta 1 -->
+        <div class="question">
+            <p>1. Qual é a capital do Brasil?</p>
+            <div class="answers">
+                <input type="radio" name="q1" value="A"> A) São Paulo<br>
+                <input type="radio" name="q1" value="B"> B) Brasília<br>
+                <input type="radio" name="q1" value="C"> C) Rio de Janeiro<br>
+                <input type="radio" name="q1" value="D"> D) Salvador<br>
+                <input type="radio" name="q1" value="E"> E) Porto Alegre<br>
+            </div>
+        </div>
+
+        <!-- Pergunta 2 -->
+        <div class="question">
+            <p>2. Quem foi o primeiro presidente do Brasil?</p>
+            <div class="answers">
+                <input type="radio" name="q2" value="A"> A) Getúlio Vargas<br>
+                <input type="radio" name="q2" value="B"> B) Juscelino Kubitschek<br>
+                <input type="radio" name="q2" value="C"> C) Deodoro da Fonseca<br>
+                <input type="radio" name="q2" value="D"> D) Washington Luís<br>
+                <input type="radio" name="q2" value="E"> E) Tancredo Neves<br>
+            </div>
+        </div>
+
+        <!-- Pergunta 3 -->
+        <div class="question">
+            <p>3. Qual é a fórmula química da água?</p>
+            <div class="answers">
+                <input type="radio" name="q3" value="A"> A) CO2<br>
+                <input type="radio" name="q3" value="B"> B) H2O<br>
+                <input type="radio" name="q3" value="C"> C) O2<br>
+                <input type="radio" name="q3" value="D"> D) H2SO4<br>
+                <input type="radio" name="q3" value="E"> E) NaCl<br>
+            </div>
+        </div>
+
+        <!-- Pergunta 4 -->
+        <div class="question">
+            <p>4. Quem escreveu "Dom Casmurro"?</p>
+            <div class="answers">
+                <input type="radio" name="q4" value="A"> A) Machado de Assis<br>
+                <input type="radio" name="q4" value="B"> B) Jorge Amado<br>
+                <input type="radio" name="q4" value="C"> C) Clarice Lispector<br>
+                <input type="radio" name="q4" value="D"> D) Guimarães Rosa<br>
+                <input type="radio" name="q4" value="E"> E) José de Alencar<br>
+            </div>
+        </div>
+
+        <!-- Pergunta 5 -->
+        <div class="question">
+            <p>5. Qual é o maior planeta do sistema solar?</p>
+            <div class="answers">
+                <input type="radio" name="q5" value="A"> A) Terra<br>
+                <input type="radio" name="q5" value="B"> B) Júpiter<br>
+                <input type="radio" name="q5" value="C"> C) Marte<br>
+                <input type="radio" name="q5" value="D"> D) Saturno<br>
+                <input type="radio" name="q5" value="E"> E) Urano<br>
+            </div>
+        </div>
+
+        <!-- Pergunta 6 -->
+        <div class="question">
+            <p>6. Quem pintou a Mona Lisa?</p>
+            <div class="answers">
+                <input type="radio" name="q6" value="A"> A) Leonardo da Vinci<br>
+                <input type="radio" name="q6" value="B"> B) Pablo Picasso<br>
+                <input type="radio" name="q6" value="C"> C) Vincent van Gogh<br>
+                <input type="radio" name="q6" value="D"> D) Claude Monet<br>
+                <input type="radio" name="q6" value="E"> E) Michelangelo<br>
+            </div>
+        </div>
+
+        <!-- Pergunta 7 -->
+        <div class="question">
+            <p>7. Qual é o símbolo químico do ouro?</p>
+            <div class="answers">
+                <input type="radio" name="q7" value="A"> A) Ag<br>
+                <input type="radio" name="q7" value="B"> B) Au<br>
+                <input type="radio" name="q7" value="C"> C) Fe<br>
+                <input type="radio" name="q7" value="D"> D) Hg<br>
+                <input type="radio" name="q7" value="E"> E) Pb<br>
+            </div>
+        </div>
+
+        <!-- Pergunta 8 -->
+        <div class="question">
+            <p>8. Qual é a montanha mais alta do mundo?</p>
+            <div class="answers">
+                <input type="radio" name="q8" value="A"> A) Everest<br>
+                <input type="radio" name="q8" value="B"> B) K2<br>
+                <input type="radio" name="q8" value="C"> C) Aconcágua<br>
+                <input type="radio" name="q8" value="D"> D) Kilimanjaro<br>
+                <input type="radio" name="q8" value="E"> E) Mont Blanc<br>
+            </div>
+        </div>
+
+        <!-- Pergunta 9 -->
+        <div class="question">
+            <p>9. O que é o sol?</p>
+            <div class="answers">
+                <input type="radio" name="q9" value="A"> A) Uma estrela<br>
+                <input type="radio" name="q9" value="B"> B) Um planeta<br>
+                <input type="radio" name="q9" value="C"> C) Uma lua<br>
+                <input type="radio" name="q9" value="D"> D) Uma galáxia<br>
+                <input type="radio" name="q9" value="E"> E) Um cometa<br>
+            </div>
+        </div>
+
+        <!-- Pergunta 10 -->
+        <div class="question">
+            <p>10. Qual é a fórmula matemática da área do círculo?</p>
+            <div class="answers">
+                <input type="radio" name="q10" value="A"> A) A = 2πr<br>
+                <input type="radio" name="q10" value="B"> B) A = πr²<br>
+                <input type="radio" name="q10" value="C"> C) A = πd<br>
+                <input type="radio" name="q10" value="D"> D) A = 4πr²<br>
+                <input type="radio" name="q10" value="E"> E) A = πr<br>
+            </div>
+        </div>
+
+        <button type="button" onclick="calcularResultado()">Ver Resultados</button>
+    </form>
+
+    <div id="result"></div>
+</div>
+
+<script>
+    function calcularResultado() {
+        const respostasCorretas = {
+            q1: "B",
+            q2: "C",
+            q3: "B",
+            q4: "A",
+            q5: "B",
+            q6: "A",
+            q7: "B",
+            q8: "A",
+            q9: "A",
+            q10: "B"
+        };
+
+        let respostasErradas = [];
+        let respostasCorretasCount = 0;
+        let resultText = "Resultados:<br>";
+
+        for (let i = 1; i <= 10; i++) {
+            const selectedAnswer = document.querySelector(`input[name="q${i}"]:checked`);
+            if (selectedAnswer) {
+                const userAnswer = selectedAnswer.value;
+                if (userAnswer === respostasCorretas[`q${i}`]) {
+                    respostasCorretasCount++;
+                } else {
+                    respostasErradas.push(`Pergunta ${i}: Sua resposta: ${userAnswer}`);
+                }
+            }
+        }
+
+        resultText += `Respostas corretas: ${respostasCorretasCount}/10<br>`;
+        if (respostasErradas.length > 0) {
+            resultText += "Respostas erradas:<br>";
+            respostasErradas.forEach(resposta => {
+                resultText += `${resposta}<br>`;
+            });
+        } else {
+            resultText += "Você acertou todas as perguntas!";
+        }
+
+        document.getElementById("result").innerHTML = resultText;
+    }
+</script>
+
+</body>
+</html>
